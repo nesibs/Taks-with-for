@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        margin: 10px 0;
+      }
+      td {
+        width: 30px;
+        height: 30px;
+        border: 1px solid black;
+        text-align: center;
+      }
+
+      a{
+            padding: 10px;
+            color: white;
+            background-color: red;
+            transition: 0.5s;
+            cursor: pointer;
+            text-decoration: none;
+            &:hover{
+                color: red;
+                background-color: aliceblue;
+            }
+      }
+    </style>
+  </head>
+  <body>
+    <table id="cdv1"></table>
+    <table id="cdv2"></table>
+    <table id="cdv3"></table>
+    <table id="cdv4"></table>
+    <table id="cdv5"></table>
+
+    <a  href="./jsMentor.htm"> Mentor tapsiriqina kec > </a>
+
+    <script>
+      // SUAL 1
+
+      const cdv1 = document.getElementById("cdv1");
+      let kod = "";
+
+      for (let i = 1; i <= 4; i++) {
+        kod += "<tr>";
+
+        for (let j = 1; j <= 4; j++) {
+          kod +=
+            (i + j) % 2 == 0
+              ? `<td style='background-color: green;'> </td>`
+              : `<td> </td>`;
+        }
+        kod += "</tr>";
+      }
+      cdv1.innerHTML = kod;
+      //
+      //
+      //
+      //
+
+      // SUAL 2
+      const cdv2 = document.getElementById("cdv2");
+      let kod2 = "";
+
+      for (let i = 1; i <= 4; i++) {
+        kod2 += "<tr>";
+
+        for (let j = 1; j <= 4; j++) {
+          kod2 +=
+            i == 1 || i == 4 || j == 1 || j == 4
+              ? `<td style='background-color: green;'> </td>`
+              : `<td> </td>`;
+        }
+        kod2 += "</tr>";
+      }
+      cdv2.innerHTML = kod2;
+
+      //
+      //
+      //
+      //
+      //
+
+      // SUAL 3
+      const cdv3 = document.getElementById("cdv3");
+      let kod3 = "";
+
+      for (let i = 1; i <= 4; i++) {
+        kod3 += "<tr>";
+
+        for (let j = 1; j <= 4; j++) {
+          kod3 +=
+            i <= j
+              ? `<td style='background-color: green;'> </td>`
+              : `<td> </td>`;
+        }
+        kod3 += "</tr>";
+      }
+
+      cdv3.innerHTML = kod3;
+
+      //
+      //
+      //
+      //
+
+      // SUAL 4
+
+      const cdv4 = document.getElementById("cdv4");
+      let kod4 = "";
+
+      for (let i = 1; i <= 8; i++) {
+        kod4 += "<tr>";
+
+        for (let j = 1; j <= 8; j++) {
+            kod4 +=
+            i == 1 || i == 8 ||  // Üst və alt sətirlər tam yaşıl
+            j >= i && j <= (9 - i) ||  // Yuxarı hissənin dolması
+            j <= i && j >= (9 - i)  
+              ? `<td style='background-color: green;'> </td>`
+              : `<td> </td>`;
+        }
+        kod4 += "</tr>";
+      }
+
+      cdv4.innerHTML = kod4;
+
+     
+    </script>
+  </body>
+</html>
